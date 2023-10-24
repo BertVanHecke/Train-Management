@@ -1,0 +1,17 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.ViewModels
+@model StationViewModel
+@{
+    ViewData["Title"] = "Create station";
+}
+
+<div class="container">
+    <form method="post" asp-action="Create" class="my-3">
+        <div class="form-group">
+            <label asp-for="City">In what city is the station located?</label>
+            <input asp-for="City" class="form-control mt-2" placeholder="Enter the name of the city">
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit station</button>
+    </form>
+</div>
+

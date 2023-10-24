@@ -1,0 +1,132 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TreinRittenApplicatie_VanHeckeBert
+build_property.RootNamespace = TreinRittenApplicatie_VanHeckeBert
+build_property.ProjectDir = C:\Users\Bertv\OneDrive\Bureaublad\VIVES\Full-stack-development\TreinRittenApplicatie_VanHeckeBert\TreinRittenApplicatie_VanHeckeBert\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Bertv\OneDrive\Bureaublad\VIVES\Full-stack-development\TreinRittenApplicatie_VanHeckeBert\TreinRittenApplicatie_VanHeckeBert
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Ride/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlkZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Ride/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlkZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Ride/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlkZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/ShoppingCart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Station/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Station/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Ticket/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Ticket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Train/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Train/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Train/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bertv/OneDrive/Bureaublad/VIVES/Full-stack-development/TreinRittenApplicatie_VanHeckeBert/TreinRittenApplicatie_VanHeckeBert/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-dvzu792eiz

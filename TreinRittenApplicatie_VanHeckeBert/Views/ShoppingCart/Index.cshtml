@@ -1,0 +1,183 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.Domain.Data.Enums
+@model TreinRittenApplicatie_VanHeckeBert.ViewModels.ShoppingCartViewModel
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    @if (Model != null)
+    {
+        <p>@ViewBag.Error</p>
+        <form asp-action="Payment">
+
+            <section class="h-100 h-custom">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body p-4">
+
+                                    <div class="row">
+
+                                        <div class="col-lg-12">
+                                            <h5 class="mb-3">
+                                                <a asp-controller="Ticket" asp-action="Index" class="text-body">
+                                                    <i class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping
+                                                </a>
+                                            </h5>
+                                            <hr>
+
+                                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                                <div>
+                                                    <p class="mb-1">Shopping cart</p>
+                                                </div>
+                                            </div>
+
+                                            @{
+                                                Decimal total = 0.00m;
+                                            }
+
+                                            @for (var i = 0; i < Model.Cart.Count; i++)
+                                            {
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="d-flex justify-content-between">
+                                                            <div class="d-flex flex-row align-items-center">
+                                                                @Html.HiddenFor(m => Model.Cart[i].Id)
+                                                                @Html.HiddenFor(m => Model.Cart[i].PriceBusiness)
+                                                                @Html.HiddenFor(m => Model.Cart[i].PriceEconomic)
+                                                                <div class="mr-3">
+                                                                    <img src="https://cdn1.iconfinder.com/data/icons/travel-and-hotel/512/train-tickets-vouchers-travel-departure-512.png"
+                                                                 class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                                                </div>
+                                                                <div class="ms-3">
+                                                                    <h5 class="mb-0">@Model.Cart[i].DepartureStation To @Model.Cart[i].ArrivalStation</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex flex-row align-items-center">
+                                                                <div class="form-group mb-0 me-3">
+                                                                    <input required onkeydown="return false" asp-for="@Model.Cart[i].Date" type="date" min="@Model.Cart[i].Date.ToString("yyyy-MM-dd")" max="@Model.Cart[i].Date.AddDays(14).ToString("yyyy-MM-dd")" value="@Model.Cart[i].Date.ToString("yyyy-MM-dd")" class="form-control mr-sm-2" />
+                                                                    <span asp-validation-for="@Model.Cart[i].Date" class="text-danger"></span>
+                                                                </div>
+                                                                <div class="form-group mb-0 me-3">
+                                                                    <select required asp-for="@Model.Cart[i].ClassType" asp-items="Html.GetEnumSelectList<ClassType>()" data-type=@i class="form-control mr-sm-2"></select>
+                                                                    <span asp-validation-for="@Model.Cart[i].ClassType" class="text-danger"></span>
+                                                                </div>
+                                                                @{
+                                                                    var subtotaal = Model.Cart[i].PriceEconomic;
+                                                                    total += subtotaal;
+                                                                }
+                                                                <div style="width: 80px;">
+                                                                    <h5 id="@("txtSubTotal" + @i)" class="mb-0">€@subtotaal</h5>
+                                                                </div>
+                                                                <a asp-action="Delete" asp-route-Id="@Model.Cart[i].Id" style="color: #cecece;" class="d-flex align-items-center">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                                    </svg>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-primary btn-block btn-md">
+                                                <div>
+                                                    <span id="txtTotalButton">€@total</span>
+                                                    <span>Checkout</span>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+
+    }
+    else
+    {
+        <section class="h-100 h-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body p-4">
+
+                                <div class="row">
+
+                                    <div class="col-lg-12">
+                                        <h5 class="mb-3">
+                                            <a asp-controller="Ticket" asp-action="Index" class="text-body">
+                                                <i class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping
+                                            </a>
+                                        </h5>
+                                        <hr>
+
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div>
+                                                <p class="mb-1">Your shopping cart is empty at the moment.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</div>
+
+@section Scripts {
+
+
+<script>
+     // window.addL....("load", setup)
+
+    // const setup = () => { }..
+
+
+     $( () => {
+         //selecteer alle  elementen waarvan die eindigen met een id-name 'aantal'
+         $("[id$=ClassType]").on('change',  (e) => {
+             console.log("change");
+             let number = $(e.currentTarget).data("type"); // hoeveelste element, bijhouden in een data-aantal atttribute
+             console.log(number);
+             let classtype = $(e.currentTarget).val();
+             console.log(classtype)
+             let selectorPrice;
+             if(classtype === "0"){
+                 selectorPrice = "Cart_" + number + "__PriceBusiness";
+             } else {
+                 selectorPrice = "Cart_" + number + "__PriceEconomic";
+             }
+             let price = $("#" + selectorPrice).val();  // document.getElementbyId("") -> $()
+             let selector = "txtSubTotal" + number;
+             $('#' + selector).text("€" + price);
+
+             let sum = 0;
+             $('[id^=txtSubTotal]').each( (index, element) => {
+                 var elementPrice = parseFloat($(element).text().replace(',', '.').replace('€', ''))
+                 if (!isNaN(elementPrice)) {
+                        sum += elementPrice;
+                 }
+             });
+
+             $('#txtTotal').text(sum);
+             $('#txtTotalButton').text("€" + sum);
+         });
+
+     });
+</script>
+}

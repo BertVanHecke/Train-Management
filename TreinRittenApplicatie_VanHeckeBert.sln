@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreinRittenApplicatie_VanHeckeBert", "TreinRittenApplicatie_VanHeckeBert\TreinRittenApplicatie_VanHeckeBert.csproj", "{C24793FF-AE1F-47C5-82A8-D92271893502}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreinRittenApplicatie_VanHeckeBert.Service", "TreinRittenApplicatie_VanHeckeBert.Service\TreinRittenApplicatie_VanHeckeBert.Service.csproj", "{C1F458A4-F812-4F88-99A7-E73A02CA0D1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreinRittenApplicatie_VanHeckeBert.Repository", "TreinRittenApplicatie_VanHeckeBert.Repository\TreinRittenApplicatie_VanHeckeBert.Repository.csproj", "{EF92FDE0-7C97-4ABA-AC57-860254F450A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreinRittenApplicatie_VanHeckeBert.Domain", "TreinRittenApplicatie_VanHeckeBert.Domain\TreinRittenApplicatie_VanHeckeBert.Domain.csproj", "{283EAF6A-D580-4451-BF73-A530907FB35D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinRittenApplicatie_VanHeckeBert.API", "TreinRittenApplicatie_VanHeckeBert.API\TreinRittenApplicatie_VanHeckeBert.API.csproj", "{5147BC85-14DF-4D53-9280-C85E50A2A676}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C24793FF-AE1F-47C5-82A8-D92271893502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24793FF-AE1F-47C5-82A8-D92271893502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24793FF-AE1F-47C5-82A8-D92271893502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24793FF-AE1F-47C5-82A8-D92271893502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F458A4-F812-4F88-99A7-E73A02CA0D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F458A4-F812-4F88-99A7-E73A02CA0D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F458A4-F812-4F88-99A7-E73A02CA0D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F458A4-F812-4F88-99A7-E73A02CA0D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF92FDE0-7C97-4ABA-AC57-860254F450A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF92FDE0-7C97-4ABA-AC57-860254F450A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF92FDE0-7C97-4ABA-AC57-860254F450A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF92FDE0-7C97-4ABA-AC57-860254F450A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283EAF6A-D580-4451-BF73-A530907FB35D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283EAF6A-D580-4451-BF73-A530907FB35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283EAF6A-D580-4451-BF73-A530907FB35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283EAF6A-D580-4451-BF73-A530907FB35D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5147BC85-14DF-4D53-9280-C85E50A2A676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5147BC85-14DF-4D53-9280-C85E50A2A676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5147BC85-14DF-4D53-9280-C85E50A2A676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5147BC85-14DF-4D53-9280-C85E50A2A676}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B9F45AB-6BE4-44B8-B066-807CF9A22B0E}
+	EndGlobalSection
+EndGlobal

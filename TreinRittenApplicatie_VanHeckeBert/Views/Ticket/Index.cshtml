@@ -1,0 +1,84 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.Domain.Data.Enums
+@model IEnumerable<TicketViewModel>
+
+@using Microsoft.AspNetCore.Identity
+@using TreinRittenApplicatie_VanHeckeBert.Areas.Identity.Data
+@using TreinRittenApplicatie_VanHeckeBert.ViewModels
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Tickets";
+}
+
+
+<div class="container">
+    <div class="accordion my-3" id="accordionExample">
+        @foreach (var ticket in Model)
+        {
+
+            <div class="d-flex justify-content-between">
+                <div class="accordion-item w-100">
+                    <h2 class="accordion-header" id="@("heading" + @ticket.Id)">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@("collapse" + @ticket.Id)" aria-expanded="false" aria-controls="@("collapse" + @ticket.Id)">
+                            <div class="text-start w-75">
+                                <p class="font-weight-bold blue-text">
+                                    From: @ticket.Rides.ElementAt(0).FromStationCity @string.Format("{0:00}:{1:00}u", ticket.Rides.ElementAt(0).DepartureTime.Hours,ticket.Rides.ElementAt(0).DepartureTime.Minutes) - To: @ticket.Rides.ElementAt(@ticket.Rides.Count() - 1).ToStationCity @string.Format("{0:00}:{1:00}u", ticket.Rides.ElementAt(@ticket.Rides.Count() - 1).ArrivalTime.Hours,ticket.Rides.ElementAt(@ticket.Rides.Count() - 1).ArrivalTime.Minutes) <span class="badge bg-primary mx-1">@(@ticket.Rides.Count() > 1 ? "This ticket has transfers" : "")</span>
+                                </p>
+                                <div class="my-2">
+                                    <p class="text-black">
+                                        <strong><span class="badge bg-success mx-1">€@ticket.PriceEconomic Economic</span> / <span class="badge bg-danger mx-1">€@ticket.PriceBusiness Business</span></strong>
+                                    </p>
+
+                                    <div></div>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="@("collapse" + @ticket.Id)" class="accordion-collapse collapse" aria-labelledby="@("heading" + @ticket.Id)" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <table class="table table-borderless table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Departure Station</th>
+                                        <th scope="col">Arrival Station</th>
+                                        <th scope="col">Departure Time</th>
+                                        <th scope="col">Arrival Time</th>
+                                        <th scope="col">Distance (KM)</th>
+                                        <th scope="col">Train</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var ride in ticket.Rides)
+                                    {
+                                        <tr>
+                                            <td>@ride.FromStationCity</td>
+                                            <td>@ride.ToStationCity</td>
+                                            <td>@string.Format("{0:00}:{1:00}u", @ride.DepartureTime.Hours,@ride.DepartureTime.Minutes)</td>
+                                            <td>@string.Format("{0:00}:{1:00}u", @ride.ArrivalTime.Hours,@ride.ArrivalTime.Minutes)</td>
+                                            <td>@ride.Distance</td>
+                                            <td>@ride.TrainName</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <div class="ms-3 d-flex align-items-center">
+                        <a asp-action="Select" asp-route-id="@ticket.Id">
+                            <i class="bi bi-bag-plus-fill"></i>
+                        </a>
+
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <a asp-controller="Ticket" asp-action="Create" class="btn btn-primary text-white mb-3">Create a new ticket</a>
+    }
+</div>
+

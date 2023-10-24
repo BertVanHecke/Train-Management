@@ -1,0 +1,18 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.Domain.Entities
+@using TreinRittenApplicatie_VanHeckeBert.ViewModels
+@model TicketRidesViewModel
+@{
+    ViewData["Title"] = "Buy ticket";
+}
+
+<div class="container">
+    <form method="post" asp-action="Create" class="my-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="control-label">Select all rides that apply to the ticket</label>
+            <select class="form-control" asp-items="@Model.Rides" asp-for="@Model.RideIds" multiple style="height: 60vh"></select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit ticket</button>
+    </form>
+</div>

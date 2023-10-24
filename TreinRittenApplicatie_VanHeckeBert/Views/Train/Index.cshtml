@@ -1,0 +1,47 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.Domain.Entities
+@model IEnumerable<TrainViewModel>
+
+@using Microsoft.AspNetCore.Identity
+@using TreinRittenApplicatie_VanHeckeBert.Areas.Identity.Data
+@using TreinRittenApplicatie_VanHeckeBert.ViewModels
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Trains";
+}
+<div class="container">
+    <table class="table table-hover table-responsive mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Capacity</th>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <th scope="col">Actions</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Name</td>
+                    <td>@item.Capacity</td>
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <a asp-controller="Train" asp-action="Edit" asp-route-id="@item.Id" class="me-3" title="Edit"><i class="bi bi-pen-fill bi-sm text-warning"></i></a>
+                            <a asp-controller="Train" asp-action="Delete" asp-route-id="@item.Id" title="Delete"><i class="bi bi-trash-fill bi-sm text-danger"></i></a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <a asp-controller="Train" asp-action="Create" class="btn btn-primary text-white" title="Create">Create a new train <i class="bi bi-plus-lg bi-sm"></i></a>
+    }
+</div>

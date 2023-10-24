@@ -1,0 +1,150 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.Domain.Entities
+@using TreinRittenApplicatie_VanHeckeBert.ViewModels
+@model IEnumerable<BookingViewModel>
+
+<div class="container">
+    <div class="accordion mt-3" id="accordionExample">
+        @foreach (var booking in Model)
+        {
+            <div class="d-flex justify-content-between">
+                <div class="accordion-item w-100">
+                    <h2 class="accordion-header" id="@("heading" + @booking.Id)">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@("collapse" + @booking.Id)" aria-expanded="false" aria-controls="@("collapse" + @booking.Id)">
+                            <div class="text-start w-75">
+                                <p class="font-weight-bold blue-text">
+                                    @booking.AspNetUserLastName @booking.AspNetUserFirstName @if (@booking.Status)
+                                    {
+                                        <strong><span class="badge bg-success mx-1">Complete</span></strong>
+                                    }
+                                    else
+                                    {
+                                        <strong><span class="badge bg-danger mx-1">Canceled</span></strong>
+                                    }
+                                </p>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="@("collapse" + @booking.Id)" class="accordion-collapse collapse" aria-labelledby="@("heading" + @booking.Id)" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                            <div class="accordion mt-3" id="@("accordionExample" + @booking.Id)">
+
+                                @foreach (var bookingTicket in booking.BookingTickets)
+                                {
+                                    <div class="d-flex justify-content-between">
+                                        <div class="accordion-item w-100">
+                                            <h2 class="accordion-header" id="@("heading" + @booking.Id + @bookingTicket.Id)">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@("collapse" + @booking.Id + @bookingTicket.Id)" aria-expanded="false" aria-controls="@("collapse" + @booking.Id +  @bookingTicket.Id)">
+                                                    <div class="text-start w-75">
+                                                        <p class="font-weight-bold blue-text">
+                                                            From: @bookingTicket.Ticket.Rides.ElementAt(0).FromStationCity @string.Format("{0:00}:{1:00}u", @bookingTicket.Ticket.Rides.ElementAt(0).DepartureTime.Hours,@bookingTicket.Ticket.Rides.ElementAt(0).DepartureTime.Minutes) - To: @bookingTicket.Ticket.Rides.ElementAt(@bookingTicket.Ticket.Rides.Count() - 1).ToStationCity @string.Format("{0:00}:{1:00}u", @bookingTicket.Ticket.Rides.ElementAt(@bookingTicket.Ticket.Rides.Count() - 1).ArrivalTime.Hours,@bookingTicket.Ticket.Rides.ElementAt(@bookingTicket.Ticket.Rides.Count() - 1).ArrivalTime.Minutes) on @bookingTicket.Date.ToString("dd-MM-yyyy") <span class="badge bg-primary mx-1">@(@bookingTicket.Ticket.Rides.Count() > 1 ? "This ticket has transfers" : "")</span>
+                                                        </p>
+                                                        <div class="my-2">
+                                                            <p class="text-black">
+                                                                <strong>@(@bookingTicket.Class == 0 ? "Business" : "Economic") €@(@bookingTicket.Class == 0 ? @bookingTicket.Ticket.PriceBusiness : @bookingTicket.Ticket.PriceEconomic)</strong>
+                                                            </p>
+                                                            <p class="text-black">
+                                                                @if (@bookingTicket.Status)
+                                                                {
+                                                                    <strong><span class="badge bg-success mx-1">Complete</span></strong>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <strong><span class="badge bg-danger mx-1">Canceled</span></strong>
+                                                                }
+                                                            </p>
+                                                            <div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="@("collapse" + @booking.Id + @bookingTicket.Id)" class="accordion-collapse collapse" aria-labelledby="@("heading" + @booking.Id + @bookingTicket.Id)" data-bs-parent="#@("accordionExample" + @booking.Id)">
+                                                <div class="accordion-body">
+                                                    <table class="table table-borderless table-responsive">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Departure Station</th>
+                                                                <th scope="col">Arrival Station</th>
+                                                                <th scope="col">Departure Time</th>
+                                                                <th scope="col">Arrival Time</th>
+                                                                <th scope="col">Train</th>
+                                                                <th scope="col">Seat</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var ride in bookingTicket.Ticket.Rides)
+                                                            {
+                                                                <tr>
+                                                                    <td>@ride.FromStationCity</td>
+                                                                    <td>@ride.ToStationCity</td>
+                                                                    <td>@ride.DepartureTime</td>
+                                                                    <td>@ride.ArrivalTime</td>
+                                                                    <td>@ride.TrainName</td>
+                                                                    @foreach (var seat in ride.Seats)
+                                                                    {
+                                                                        if (seat.BookingTicket.Id == bookingTicket.Id)
+                                                                        {
+                                                                            <td>@seat.Number</td>
+                                                                        }
+                                                                    }
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @if (bookingTicket.Status)
+                                        {
+                                            @if (bookingTicket.Date >= DateTime.Today.AddDays(3))
+                                            {
+                                                <div class="ms-3 d-flex align-items-center">
+                                                    <a asp-action="CancelBookingTicket" asp-route-id="@bookingTicket.Id" asp-route-price="0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                                                        </svg>
+                                                    </a>
+
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="ms-3 d-flex align-items-center">
+                                                    <a asp-action="CancelBookingTicket" asp-route-id="@bookingTicket.Id" asp-route-price="@bookingTicket.Class == 0 ? @bookingTicket.Ticket.PriceBusiness : @bookingTicket.Ticket.PriceEconomic">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                                                        </svg>
+                                                    </a>
+
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div class="ms-3 d-flex align-items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                                                </svg>
+                                            </div>
+                                        }
+
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                @*                <div class="ms-3 d-flex align-items-center">
+                    <a asp-action="Select" asp-route-id="@booking.Id">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z" />
+                    </svg>
+                    </a>
+
+                    </div>*@
+            </div>
+        }
+    </div>
+</div>

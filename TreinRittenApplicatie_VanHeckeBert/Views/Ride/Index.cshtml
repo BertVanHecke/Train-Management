@@ -1,0 +1,53 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.ViewModels
+@model IEnumerable<RideViewModel>
+
+@using Microsoft.AspNetCore.Identity
+@using TreinRittenApplicatie_VanHeckeBert.Areas.Identity.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Rides";
+}
+
+<div class="container">
+    <table class="table table-responsive table-hover mt-3">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Departure Station</th>
+                <th scope="col">Arrival Station</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Arrival Time</th>
+                <th scope="col">Distance (KM)</th>
+                <th scope="col">Train</th>
+                <th scope="col">Capacity</th>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <th scope="col">Actions</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ride in Model)
+            {
+                <tr>
+                    <th scope="row">@ride.Id</th>
+                    <td>@ride.FromStationCity</td>
+                    <td>@ride.ToStationCity</td>
+                    <td>@ride.DepartureTime</td>
+                    <td>@ride.ArrivalTime</td>
+                    <td>@ride.Distance</td>
+                    <td>@ride.TrainName</td>
+                    <td>@ride.TrainCapacity</td>
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <a asp-controller="Ride" asp-action="Edit" asp-route-id="@ride.Id" class="me-3"><i class="bi bi-pen-fill bi-sm text-warning"></i></a>
+                            <a asp-controller="Ride" asp-action="Delete" asp-route-id="@ride.Id"><i class="bi bi-trash-fill bi-sm text-danger"></i></a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-controller="Ride" asp-action="Create" class="btn btn-primary text-white">Create a new ride</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@using TreinRittenApplicatie_VanHeckeBert.ViewModels;
+@model RideTrainsStationsViewModel
+@{
+    ViewData["Title"] = "Edit Ride";
+}
+
+<div class="container">
+    <form method="post" asp-action="Edit">
+        <div class="form-group">
+            <label asp-for="Ride.TrainId">Select a train</label>
+            <select asp-for="Ride.TrainId" class="custom-select mr-sm-2" asp-items="@Model.Trains">
+                   <option>Please select a train</option>
+            </select>
+            <span asp-validation-for="Ride.TrainId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ride.FromStationId">Select a station</label>
+            <select asp-for="Ride.FromStationId" class="custom-select mr-sm-2" asp-items="@Model.Stations">
+                    <option>Please select a departure station</option>
+            </select>
+            <span asp-validation-for="Ride.FromStationId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ride.ToStationId">Select a station</label>
+            <select asp-for="Ride.ToStationId" class="custom-select mr-sm-2" asp-items="@Model.Stations">
+                    <option>Please select an arrival station</option>
+            </select>
+            <span asp-validation-for="Ride.ToStationId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ride.DepartureTime">At what time is the train set to departure?</label>
+            <input asp-for="Ride.DepartureTime" type="time" class="form-control">
+            <span asp-validation-for="Ride.DepartureTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ride.ArrivalTime">At what time is the train set to arrive?</label>
+            <input asp-for="Ride.ArrivalTime" type="time" class="form-control">
+            <span asp-validation-for="Ride.ArrivalTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ride.Distance">What is the distance for the ride?</label>
+            <input asp-for="Ride.Distance" type="number" class="form-control">
+            <span asp-validation-for="Ride.Distance" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Edit ride</button>
+    </form>
+</div>

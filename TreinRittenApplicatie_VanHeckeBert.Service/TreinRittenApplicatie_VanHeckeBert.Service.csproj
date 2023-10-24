@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TreinRittenApplicatie_VanHeckeBert.Domain\TreinRittenApplicatie_VanHeckeBert.Domain.csproj" />
+    <ProjectReference Include="..\TreinRittenApplicatie_VanHeckeBert.Repository\TreinRittenApplicatie_VanHeckeBert.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
